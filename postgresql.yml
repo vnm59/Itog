@@ -1,0 +1,10 @@
+---
+- hosts: postgres
+  become: yes
+  tasks:
+  -  name: Install Postgresql
+     apt:
+        name=postgresql
+        state=latest
+     when:
+        ansible_os_family == "Debian"

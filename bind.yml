@@ -1,0 +1,10 @@
+---
+- hosts: wordpress
+  become: yes
+  tasks:
+  -  name: Install Bind9
+     apt:
+       name=bind9
+       state=latest
+     when:
+       ansible_os_family == "Debian"
